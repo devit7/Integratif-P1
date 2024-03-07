@@ -33,8 +33,8 @@ class CollectionController extends Controller
 
         //menyimpan data
         Collections::create([
-            'namaKoleksi' => $request->name,
-            'jenisKoleksi' => $request->email,
+            'namaKoleksi' => $request->namaKoleksi,
+            'jenisKoleksi' => $request->jenisKoleksi,
             'jumlah' => $request->jumlah
         ]);
 
@@ -43,6 +43,6 @@ class CollectionController extends Controller
 
     public function show(Collections $koleksi)
     {
-        return view('detailPengguna', compact('koleksi'));
+        return view('koleksi.infoKoleksi', compact('koleksi'));
     }
 }
